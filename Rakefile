@@ -6,7 +6,7 @@ namespace :db do
   task :migrate do
     connection_details = YAML::load(File.open('config/database.yml'))
     ActiveRecord::Base.establish_connection(connection_details)
-    ActiveRecord::MigrationContext.migrate("db/migrate/")
+    ActiveRecord::MigrationContext.new("db/migrate/").migrations
   end
 
   desc "drop and recreate the db"
