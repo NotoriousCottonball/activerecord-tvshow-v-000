@@ -12,7 +12,7 @@ class Show < ActiveRecord::Base
     Show.order(:rating).first
    end
    def self.ratings_sum
-    Show.sum("rating")
+    Show.sum(:rating)
    end
    def self.popular_shows
     Show.where("rating > 5")
