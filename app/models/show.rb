@@ -3,7 +3,7 @@ class Show < ActiveRecord::Base
     Show.maximum(:rating)
    end
    def self.most_popular_show
-    Show.order(rating: :desc)
+    Show.order(rating: :desc).first
    end
    def self.lowest_rating
     Show.minimum(:rating)
